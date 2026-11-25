@@ -54,3 +54,9 @@ node --check app/static/app.js
 ```
 
 Python 测试使用临时数据和虚构来源。Node 仅用于开发时的 JavaScript 语法检查。
+
+## 开源许可证
+
+JobClaw 的代码、Codex Skill、提示词模板和文档采用 [GNU Affero General Public License v3.0](LICENSE)（AGPL-3.0-only）。
+
+Copyright © 2026 john-ops-lab
