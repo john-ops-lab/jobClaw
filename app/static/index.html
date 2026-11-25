@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JobClaw · 工作雷达</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/views.css"></head>
+<body>
+<div class="shell">
+ <aside class="sidebar">
+  <a class="brand" href="/"><span>J</span><div>JobClaw<small>工作雷达</small></div></a>
+  <p class="nav-label">发现与选择</p>
+  <nav aria-label="主导航">
+   <button data-page="jobs">岗位清单 <span id="count-new"></span></button>
+   <button data-page="favorites">收藏 <span id="count-favorites"></span></button>
+   <button data-page="companies">公司概览 <span id="count-companies"></span></button>
+   <button data-page="ignored">已忽略岗位 <span id="count-ignored"></span></button>
+   <button data-page="ended">已结束岗位 <span id="count-ended"></span></button>
+   <div class="nav-divider"></div>
+   <button data-page="blocked">受阻清单 <span id="count-blocked"></span></button>
+   <button data-page="unfit">已查无匹配 <span id="count-unfit"></span></button>
+   <div class="nav-divider"></div>
+   <button data-page="preferences">偏好总结 <span id="count-preferences"></span></button>
+  </nav>
+  <div class="profile"><span class="dot"></span> 我的求职目标<strong id="profile-summary">正在读取…</strong></div>
+  <div class="sidebar-foot">本机 Web · SQLite<br>数据更新由 Agent 完成</div>
+ </aside>
+ <main>
+  <header class="topbar"><span>我的机会 <span class="slash">/</span> <span id="breadcrumb">岗位清单</span></span><span id="data-date">正在读取数据库…</span></header>
+  <div id="error" role="alert" hidden></div>
+  <div id="content"><div class="empty">正在读取岗位…</div></div>
+ </main>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="score-dialog" aria-labelledby="score-title">
+ <form id="score-form">
+  <div class="dialog-heading"><h2 id="score-title">调整我的评分</h2><button type="button" data-close="score-dialog" aria-label="关闭评分窗口">×</button></div>
+  <p id="score-job"></p><div id="ai-explanation" class="callout"></div>
+ <p id="score-error" class="score-error" role="alert" hidden></p>
+  <fieldset><legend>我的匹配度</legend><div class="score-options">
+   <label><input type="radio" name="score" value="3" required><strong>3 分</strong><span>优先考虑</span></label>
+   <label><input type="radio" name="score" value="2"><strong>2 分</strong><span>值得关注</span></label>
+   <label><input type="radio" name="score" value="1"><strong>1 分</strong><span>可以探索</span></label>
+   <label><input type="radio" name="score" value="0"><strong>0 分</strong><span>归入已忽略</span></label>
+  </div></fieldset>
+  <label class="field-label" for="score-note">调整理由（可选）</label><textarea id="score-note" maxlength="2000" rows="3" placeholder="例如：我已有相关生产项目，或者不想做这个方向"></textarea>
+  <p class="muted">人工0分自动归入已忽略岗位，原投递记录保留；恢复正分后重新归类。后续数据更新不会覆盖你的评分与理由。</p>
+  <div class="dialog-actions"><button type="button" id="restore-ai">恢复 AI 评分</button><button type="submit" class="primary">保存我的评分</button></div>
+ </form>
+</dialog>
+<dialog id="source-dialog" aria-labelledby="source-title"><div class="dialog-heading"><h2 id="source-title">来源原文</h2><button type="button" data-close="source-dialog" aria-label="关闭来源窗口">×</button></div><div id="source-meta" class="muted"></div><div id="source-content"></div></dialog>
+<script src="/app.js" defer></script>
+</body></html>

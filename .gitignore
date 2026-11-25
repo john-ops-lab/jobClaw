@@ -1,0 +1,8 @@
+# Keep all local profiles, evidence, reports and Agent drafts in the runtime directory.
+.jobclaw/
+__pycache__/
+*.py[cod]
+*.sqlite3*
+.DS_Store
+.env
+.env.*

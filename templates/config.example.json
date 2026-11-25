@@ -1,0 +1,19 @@
+{
+  "timezone": "【工作区时区】",
+  "search": {
+    "scope": "【搜索范围】",
+    "exclusions": "【搜索阶段排除条件】"
+  },
+  "profile": {
+    "goal": "【求职目标】",
+    "confirmed": "【已确认的履历与能力】",
+    "unknowns": "【履历待确认事项】"
+  },
+  "scores": {
+    "0": {"label": "【0分标签】", "criteria": "【0分判定标准】"},
+    "1": {"label": "【1分标签】", "criteria": "【1分判定标准】"},
+    "2": {"label": "【2分标签】", "criteria": "【2分判定标准】"},
+    "3": {"label": "【3分标签】", "criteria": "【3分判定标准】"}
+  },
+  "hard_filters": "【精筛硬条件】"
+}
